@@ -22,16 +22,35 @@ Date date=new Date();
 <form 
 method="post"
 action="/login.do">
+
+<p style="color:red;">
+${error}
+</p>
+<br/>
+
+
 Enter name <br/>
 <input 
 type="text"
 name="name"
 autocomplete="off"
 />
+<br/>
+<br/>
+Enter password <br/>
+<input 
+type="password"
+name="password"
+autocomplete="off"
+/>
+
 <input
 type="submit"
 value="Login"
 />
+
+
+
 </form>
 
 
