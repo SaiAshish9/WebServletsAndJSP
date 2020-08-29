@@ -27,15 +27,14 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-
 //	redirecting to jsp
-
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+//		String name = request.getParameter("name");
+//		request.setAttribute("name", name);
+		// we can forward password in this way
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
-
 		// PrintWriter out = response.getWriter();
 //		out.println("<html>");
 //		out.println("<head>");
@@ -45,6 +44,13 @@ public class LoginServlet extends HttpServlet {
 //		out.println("My First Servlet");
 //		out.println("</body>");
 //		out.println("</html>");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("name", request.getParameter("name"));
+		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 	}
 
 }
