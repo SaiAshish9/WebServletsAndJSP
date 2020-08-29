@@ -1,3 +1,4 @@
+
 <%@ page
 import="java.util.Date"
  language="java" contentType="text/html; charset=UTF-8"
@@ -8,27 +9,20 @@ import="java.util.Date"
 <meta content="text/html" http-equiv="Content-Type" charset="UTF-8">
 <title>Login</title>
 </head>
-
 <% 
 System.out.println(request.getParameter("name"));
 Date date=new Date();
 %>
-
-
 <body>
 <%= date %>
 <!-- ${name}  -->
-
 <form 
 method="post"
 action="/login.do">
-
 <p style="color:red;">
 ${error}
 </p>
 <br/>
-
-
 Enter name <br/>
 <input 
 type="text"
@@ -43,23 +37,11 @@ type="password"
 name="password"
 autocomplete="off"
 />
-
 <input
 type="submit"
 value="Login"
 />
-
-
-
 </form>
-
-
 </body>
-
-
-
-
-
-
-
 </html>
+
